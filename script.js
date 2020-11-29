@@ -1,7 +1,7 @@
 let inputComparison =
-  '{"Cost:Battery":[6],"Cost:Screen":[4],"Cost:Ease":[2],"Battery:Screen":[-1],"Battery:Ease":[-2],"Screen:Ease":[-2]}';
+  '{"BMW:Ford":[-4],"BMW:Peugeot":[-7],"Skoda:Ford":[0],"BMW:Skoda":[-5],"Skoda:Peugeot":[-3],"Volvo:Peugeot":[-1],"BMW:Volvo":[-6],"Ford:Peugeot":[0],"Volvo:Ford":[0],"Volvo:Skoda":[-1]}';
 
-const items = ["Cost", "Battery", "Screen", "Ease"].sort();
+const items = ["BMW", "Ford", "Peugeot", "Skoda", "Volvo"].sort();
 
 // 0. Pomocnicze funkcje
 const matrixProduct = (matrix1, matrix2) => {
@@ -191,3 +191,4 @@ convertAhpValuesOfObj(comps);
 
 const matrix = createMatrixOfComparisons(comps, items);
 const weights = getWeights(matrix, items);
+const cr = getConsistencyRatio(matrix, weights);
